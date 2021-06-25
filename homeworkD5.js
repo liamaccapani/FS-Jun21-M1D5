@@ -18,3 +18,20 @@ const area = function(l1, l2) {
 let result = area(3, 4)
 console.log(result)
 
+/* EXERCISE 2
+Write a function "crazySum" which receives two integers. It should return the sum of those two values, but if the two values are the same then it should return their sum multiplied by 3.
+*/
+
+const crazySum = function (a, b) {
+    let result
+    if (a === b) {
+        result = (a + b) * 3
+        return result
+    } else {
+        result = (a + b)
+        return result
+    }
+}
+
+let crazySumResult = crazySum(3, 4)
+console.log(crazySumResult)
