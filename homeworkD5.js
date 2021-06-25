@@ -18,6 +18,7 @@ const area = function(l1, l2) {
 let result = area(3, 4)
 console.log(result)
 
+
 /* EXERCISE 2
 Write a function "crazySum" which receives two integers. It should return the sum of those two values, but if the two values are the same then it should return their sum multiplied by 3.
 */
@@ -35,6 +36,7 @@ const crazySum = function (a, b) {
 
 let crazySumResult = crazySum(3, 4)
 console.log(crazySumResult)
+
 
 /* EXERCISE 3
 Write a function "crazyDiff" that computes the absolute difference between a given number and 19. 
@@ -55,3 +57,24 @@ const crazyDiff = function(a, b) {
 
 let absoluteDifference = crazyDiff(3, 4)
 console.log(absoluteDifference)
+
+
+/* EXERCISE 4
+Write a function "boundary" which accept an integer n and returns true if n is within 20 and 100 (included) or if it's equal to 400.
+*/
+
+// let a
+// // let greaterThan = a >= 20
+// // let smallerThan = a <= 100
+
+const boundary = function(a) {
+    if (a>= 20 && a <= 100 || a === 400) {
+        return true
+    } else {
+        return false
+    }
+}
+
+let printedResult = boundary(101)
+console.log(printedResult)
+//console.log(boundary(101))
