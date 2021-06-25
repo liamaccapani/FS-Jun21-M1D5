@@ -78,3 +78,22 @@ const boundary = function(a) {
 let printedResult = boundary(101)
 console.log(printedResult)
 //console.log(boundary(101))
+
+
+/* EXERCISE 5
+Write a function "strivify" which accepts a string.
+It should add the word "Strive" in front of the given string, but if the given string already begins with "Strive", then it should just return the original string.
+*/
+
+// let myString = "original string"
+// const strivify = function() {
+//     do {
+//         myString = "Strive" + "original string"
+//     } while (myString = "original string") {
+//     }
+// }
+
+// let prova = strivify()
+// console.log(prova)
+
+
