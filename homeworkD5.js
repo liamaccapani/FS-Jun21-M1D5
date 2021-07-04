@@ -141,31 +141,62 @@ console.log(check3and7(1))
 /* EXERCISE 7
 Write a function "reverseString" to programmatically reverse a given string (es.: Strive => evirtS).
 */
+const reverseString = function(string){
+    let reversedString = string.split("").reverse().join("")
+    // reversedString.reverse().join("-")
+
+    return reversedString
+}
+
+console.log(reverseString("Strive"))
+
+// let reversedString = string.split("")
+// reversedString.reverse().join("")
+// return reversedStrtring  
 
 
 
 /* EXERCISE 8
 Write a function "upperFirst" to capitalize the first letter of each word of a given string passed as a parameter.
 */
+//The charAt(index) function returns only the character at a given position in a string. 
+const upperFirst = function(string){
+    let capitalizedString = string.charAt(0).toUpperCase() + string.slice(1)
+    return capitalizedString
+}
 
+console.log(upperFirst("lia"))
 
 
 /* EXERCISE 9
 Write a function "cutString" to create a new string without the first and last character of a given string.
 */
+const cutString = function(string2){
+    let newString = string2.slice(1, -1)
+    return newString
+}
 
+console.log(cutString("Puppa"))
 
 
 /* EXERCISE 10
 Write a function "giveMeRandom" which accepts a number n and returns an array containing n random numbers between 0 and 10.
 */
+const giveMeRandom = function(x){
+    let randomArray = []
+    for (i=0; i<x; i++){
+        let random= Math.floor(Math.random()*10)
+        randomArray.push(random)
+    }
+    return randomArray
+}
+console.log(giveMeRandom(3))
 
 // >------------------------< EXTRA >------------------------<
 /* EXERCISE 11
 Write a function "checkArray" which receives an array of random numbers (created with giveMeRandom) and prints, for each item, whether it's bigger than 5.
 The function returns the sum of the numbers bigger than 5.
 */
-
 
 
 /* EXERCISE 12
