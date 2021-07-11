@@ -199,6 +199,7 @@ The function returns the sum of the numbers bigger than 5.
 */
 
 
+
 /* EXERCISE 12
 In your eCommerce you have an array of objects called shoppingCart. In this array you have a number of objects with a price, a name, an id and the quantity to be shipped.
 Create a function "shippingCartTotal" which calculates the total due to the shop.
