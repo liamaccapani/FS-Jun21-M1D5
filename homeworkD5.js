@@ -35,8 +35,8 @@ const crazySum = function (a, b) {
     return result
 }
 
-let crazySumResult = crazySum(3, 4)
-console.log(crazySumResult)
+// let crazySumResult = crazySum(3, 4)
+console.log(crazySum(3, 4))
 
 
 /* EXERCISE 3
@@ -85,9 +85,9 @@ const boundary = function(a) {
     }
 }
 
-let printedResult = boundary(101)
-console.log(printedResult)
-//console.log(boundary(101))
+// let printedResult = boundary(101)
+// console.log(printedResult)
+console.log(boundary(101))
 
 
 /* EXERCISE 5
@@ -184,7 +184,7 @@ Write a function "giveMeRandom" which accepts a number n and returns an array co
 */
 const giveMeRandom = function(x){
     let randomArray = []
-    for (i=0; i<x; i++){
+    for (let i=0; i<x; i++){
         let random= Math.floor(Math.random()*10)
         randomArray.push(random)
     }
@@ -193,18 +193,50 @@ const giveMeRandom = function(x){
 console.log(giveMeRandom(3))
 
 // >------------------------< EXTRA >------------------------<
-/* EXERCISE 11
+/* EXERCISE 11                                                          
 Write a function "checkArray" which receives an array of random numbers (created with giveMeRandom) and prints, for each item, whether it's bigger than 5.
 The function returns the sum of the numbers bigger than 5.
 */
+let randomArray = giveMeRandom(3)
+console.log(randomArray)
 
+let checkArray = function(arr){
+    let totalSum = 0
+    for(let element of arr){
+        if(element > 5){
+            console.log(`${element} is bigger than 5!`)
+            totalSum += element
+            //return totalSum   only the sum of one of the element bigger than five (for ex: 7)
+        } else if (element === 5){
+            console.log(`${element} is equal to 5!`)
+        } else if (element < 5){
+            console.log(`${element} is smaller than 5!`)
+        }
+    }
+    return totalSum //the sum of all the elements bigger than five (for ex: 7 + 7)
+}
 
+console.log(checkArray(randomArray))
 
 /* EXERCISE 12
 In your eCommerce you have an array of objects called shoppingCart. In this array you have a number of objects with a price, a name, an id and the quantity to be shipped.
 Create a function "shippingCartTotal" which calculates the total due to the shop.
 */
+let shoppingCart = [
+    {price: 40, id: "A13546", product: "Wireless Keyboard", quantity: 1 },
+    {price: 2,  id: "A13548", product: "Red Bull 500ml", quantity: 10 },
+    {price: 30,  id: "A13551", product: "HD Webcam", quantity: 1 },
+]
 
+let shippingCartTotal = function(array){
+    let totalCost = 0
+    for (let item of shoppingCart){
+        totalCost += item.price * item.quantity
+    }
+    return totalCost
+}
+
+console.log(shippingCartTotal(shoppingCart))
 
 
 /* EXERCISE 13
@@ -212,39 +244,85 @@ In your eCommerce you have an array of objects called shoppingCart. In this arra
 Create a function "addToShoppingCart" which receives a new object, adds it to shoppingCart and returns the total number of items in the shoppingCart.
 */
 
+let newProduct = {price: 20, id: "A14547", product: "Earphones", quantity: 2 }
 
+let addToShoppingCart = function(obj){
+    shoppingCart.push(obj)
+    let totalItems = 0
+    for (let item of shoppingCart){
+        totalItems += item.quantity
+    }
+    return totalItems
+}
+
+console.log(addToShoppingCart(newProduct))
 
 /* EXERCISE 14
 In your eCommerce you have an array of objects called shoppingCart. In this array you have a number of objects with a price, a name, an id and the quantity to be shipped.
 Create a function "maxShoppingCart" which receives the shoppingCart array and returns the most expensive item in the array.
 */
+let maxShoppingCart = function(array){
+    let mostExpensive = array[0]
+    for (let item of shoppingCart){
+        if (item.price > mostExpensive.price){
+            mostExpensive = item
+        }
+    }
+    return mostExpensive //return mostExpensive.name
+}
 
+console.log(maxShoppingCart(shoppingCart))
 
 
 /* EXERCISE 15
 In your eCommerce you have an array of objects called shoppingCart. In this array you have a number of objects with a price, a name, an id and the quantity to be shipped.
 Create a function "latestShoppingCart" which receives the shoppingCart array and returns the last item.
 */
+let latestShoppingCart = function(array){
+    //let lastItem = array.length-1     returns only index
+    //let lastItem = array.slice(-1)
+    let lastItem = array[array.length-1]
+    return lastItem
+}
 
-
+console.log(latestShoppingCart(shoppingCart))
 
 /* EXERCISE 16
 Create a function "loopUntil" which receives an integer x between 0 and 9.
 The function loops and prints a random number between 0 and 9 until the random number is bigger than x for three times in a row.
 */
+// let loopUntil = function(x){
+//     let randomNumber = Math.floor(Math.random() * 9) +1
 
+// }
 
 
 /* EXERCISE 17
 Write a function "average" which receives an array and return the average value. The function automatically skips non-numeric entries in the array.
 */
+let average = function(array){      //not working
+    let totalSum = 0
+    // for (let element of array){
+    //     averageResult += element
+    // }
+    for (let i=0; i<array.length; i++){
+        // if (typeof (array[i]) === 'number' ){       implement the "filter" for numbers
+            totalSum += array[i]
+        // }   
+    }
+    let averageResult = totalSum / array.length
 
+    return averageResult
+}
 
+console.log(average([10, 22, 4, 'puppa']))
 
 /* EXERCISE 18
 Write a function "longest" to find the longest string from an given array of strings.
 */
-
+let longest = function(){
+    
+}
 
 
 /* EXERCISE 19
