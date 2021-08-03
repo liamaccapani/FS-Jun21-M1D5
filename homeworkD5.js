@@ -192,15 +192,22 @@ const giveMeRandom = function(x){
 }
 console.log(giveMeRandom(3))
 
-// >------------------------< EXTRA >------------------------<
-/* EXERCISE 11                                                          
+
+console.log('>------------------------< EXTRA >------------------------<')
+
+const newExercise = function(n){
+    console.log(`>-------< Exercise ${n}>-------<`)
+}
+
+newExercise(11)
+/* EXERCISE 11 ✅                                               
 Write a function "checkArray" which receives an array of random numbers (created with giveMeRandom) and prints, for each item, whether it's bigger than 5.
 The function returns the sum of the numbers bigger than 5.
 */
 let randomArray = giveMeRandom(3)
 console.log(randomArray)
 
-let checkArray = function(arr){
+const checkArray = function(arr){
     let totalSum = 0
     for(let element of arr){
         if(element > 5){
@@ -218,7 +225,9 @@ let checkArray = function(arr){
 
 console.log(checkArray(randomArray))
 
-/* EXERCISE 12
+
+newExercise(12)
+/* EXERCISE 12 ✅
 In your eCommerce you have an array of objects called shoppingCart. In this array you have a number of objects with a price, a name, an id and the quantity to be shipped.
 Create a function "shippingCartTotal" which calculates the total due to the shop.
 */
@@ -228,7 +237,7 @@ let shoppingCart = [
     {price: 30,  id: "A13551", product: "HD Webcam", quantity: 1 },
 ]
 
-let shippingCartTotal = function(array){
+let shippingCartTotal = function(arr){
     let totalCost = 0
     for (let item of shoppingCart){
         totalCost += item.price * item.quantity
@@ -238,8 +247,8 @@ let shippingCartTotal = function(array){
 
 console.log(shippingCartTotal(shoppingCart))
 
-
-/* EXERCISE 13
+newExercise(13)
+/* EXERCISE 13 ✅
 In your eCommerce you have an array of objects called shoppingCart. In this array you have a number of objects with a price, a name, an id and the quantity to be shipped.
 Create a function "addToShoppingCart" which receives a new object, adds it to shoppingCart and returns the total number of items in the shoppingCart.
 */
@@ -257,7 +266,8 @@ let addToShoppingCart = function(obj){
 
 console.log(addToShoppingCart(newProduct))
 
-/* EXERCISE 14
+newExercise(14)
+/* EXERCISE 14 ✅
 In your eCommerce you have an array of objects called shoppingCart. In this array you have a number of objects with a price, a name, an id and the quantity to be shipped.
 Create a function "maxShoppingCart" which receives the shoppingCart array and returns the most expensive item in the array.
 */
@@ -273,8 +283,8 @@ let maxShoppingCart = function(array){
 
 console.log(maxShoppingCart(shoppingCart))
 
-
-/* EXERCISE 15
+newExercise(15)
+/* EXERCISE 15 ✅
 In your eCommerce you have an array of objects called shoppingCart. In this array you have a number of objects with a price, a name, an id and the quantity to be shipped.
 Create a function "latestShoppingCart" which receives the shoppingCart array and returns the last item.
 */
@@ -287,57 +297,95 @@ let latestShoppingCart = function(array){
 
 console.log(latestShoppingCart(shoppingCart))
 
+
+newExercise(16)
 /* EXERCISE 16
 Create a function "loopUntil" which receives an integer x between 0 and 9.
 The function loops and prints a random number between 0 and 9 until the random number is bigger than x for three times in a row.
 */
-// let loopUntil = function(x){
-//     let randomNumber = Math.floor(Math.random() * 9) +1
+
+// const loopUntil = function(x){
 
 // }
 
-
+newExercise(17)
 /* EXERCISE 17
 Write a function "average" which receives an array and return the average value. The function automatically skips non-numeric entries in the array.
 */
-let average = function(array){      //not working
-    let totalSum = 0
-    // for (let element of array){
-    //     averageResult += element
-    // }
-    for (let i=0; i<array.length; i++){
-        // if (typeof (array[i]) === 'number' ){       implement the "filter" for numbers
-            totalSum += array[i]
-        // }   
-    }
-    let averageResult = totalSum / array.length
 
-    return averageResult
-}
+// const average = function(arr){
+//     //loop array e sommare numeri
+//     //dividere somma per lunghezza numeri
+//     //continue se non numero
 
-console.log(average([10, 22, 4, 'puppa']))
+//     for(let i=0; i<arr.length; i++){
+//         if(typeof arr[i] === 'number'){
+//             let totalSum = 0
+//             totalSum += arr[i]
+//             return totalSum/arr.length
+//         } else {
+//             continue
+//         }
+//     }
+// }
 
+// const arrayProva = [3, 4,'puppa', 5]
+// console.log(average(arrayProva))
+
+
+
+// let average = function(arr){      //not working
+//     let totalSum = 0
+//     // for (let element of array){
+//     //     averageResult += element
+//     // }
+//     for (let i=0; i<array.length; i++){
+//         // if (typeof (array[i]) === 'number' ){       implement the "filter" for numbers
+//             totalSum += array[i]
+//         // }   
+//     }
+//     let averageResult = totalSum / array.length
+
+//     return averageResult
+// }
+
+//  
+
+newExercise(18)
 /* EXERCISE 18
-Write a function "longest" to find the longest string from an given array of strings.
+Write a function "longest" to find the longest string from a given array of strings.
 */
-let longest = function(){
+
+
+// const longest = function(arr){
     
-}
+// }
 
-
-/* EXERCISE 19
+newExercise(19)
+/* EXERCISE 19 ✅
 Write a function to create a very simple anti spam filter for your mailbox. The function takes a string emailContent, and returns a boolean.
 Check if the email is valid using string methods. The email (in this example) is valid if the words SPAM and SCAM does not appear.
 */
 
+const isThisAnEmail = function(emailContent){
+    if(emailContent.includes('spam', 'scam')){
+        console.log('Spam detected')
+        return true
+    } else {
+        console.log('No spam detected')
+    }
+}
+
+console.log(isThisAnEmail('This is spam'))
 
 
+newExercise(20)
 /* EXERCISE 20
 Write a function that receives a date d as parameter and calculates the number of days passes since the d.
 */
 
 
-
+newExercise(21)
 /* EXERCISE 21
 Write a function "matrixGenerator" that receives x and y as parameter. The result should be a matrix of x times y with, as value, the index of the position.
 Ex.: X = 3, Y = 2
